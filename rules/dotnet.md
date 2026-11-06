@@ -8,3 +8,15 @@
 - EF/SQL: no queries in loops, project only needed columns, `AsNoTracking` for reads.
 - Excel/file import: validate everything, collect all row errors with row/column location, never fail on the first error unless the file is structurally unreadable.
 - Tests: xUnit + FluentAssertions (or whatever the repo already uses); Arrange-Act-Assert; no real I/O in unit tests.
+- **Code style:** Follow the repository's `.editorconfig`, analyzers, and existing formatting conventions. Do not introduce a competing style.
+- **Architecture:** Keep business logic independent of infrastructure and UI concerns. Avoid unnecessary abstractions and premature generalization.
+- **SOLID:** Apply SOLID principles pragmatically. Prefer composition over inheritance; avoid interfaces with only one implementation unless they define a meaningful boundary.
+- **LINQ:** Avoid multiple enumeration of `IEnumerable<T>`, hidden side effects in LINQ expressions, and unnecessarily complex queries.
+- **Resources:** Dispose `IDisposable` and `IAsyncDisposable` resources correctly. Prefer `using` and `await using`.
+- **Validation:** Validate external input at application boundaries. Do not duplicate the same validation across multiple layers without a reason.
+- **Security:** Never hardcode credentials, API keys, connection strings, or secrets. Use secure configuration providers. Never log sensitive data.
+- **Performance:** Prefer simple, readable code. Avoid unnecessary allocations, premature optimization, and N+1 database queries. Measure performance before optimizing.
+- **API compatibility:** Avoid breaking public APIs without explicit approval. Consider backward compatibility when changing DTOs, contracts, and interfaces.
+- **Build verification:** Before completing a task, run the relevant build, tests, and static analysis. Report any checks that could not be executed.
+- **Dependencies:** Reuse existing packages where possible. Do not add NuGet dependencies without a clear justification.
+- **Configuration:** Keep environment-specific configuration outside source code. Validate required configuration at application startup and fail with actionable error messages.
