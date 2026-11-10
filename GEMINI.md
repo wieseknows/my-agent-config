@@ -6,6 +6,7 @@
 - Make the smallest change that solves the ticket. No drive-by refactors; list them separately as suggestions.
 - Never add a dependency without stating why existing ones don't work.
 - Never silently swallow errors, disable tests, or weaken validation to get green.
+- Preserve original file encoding and BOM (especially UTF-8 with BOM, EF BB BF). Built-in edit tools may strip BOM; after modifying existing files, check git diff (or file header bytes) and restore the original BOM if it was present, and match neighboring files' BOM convention for new files.
 
 ## Quality bar
 - Code must compile, lint clean, and pass existing tests before you report done.
