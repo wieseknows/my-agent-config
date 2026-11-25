@@ -41,7 +41,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1 -Global -Project "C:\dev\
 
 ### Integration with `dotfiles`
 
-If you use [wieseknows/dotfiles](https://github.com/wieseknows/dotfiles), you do not need to clone or run this repository manually. Configure `INSTALL_AGENT_CONFIG=true` and `AGENT_CONFIG_PROJECTS` in `~/.bashrc.local` (see `.bashrc.local.template` in `dotfiles`), and `dotfiles/install.sh` will clone/pull `my-agent-config` and invoke `./install.sh` automatically.
+If you use [wieseknows/dotfiles](https://github.com/wieseknows/dotfiles), you do not need to clone or run this repository manually. Enable agent sync in the `dotfiles` GUI (**Agents** tab + **Agent rules** column on **Projects & Tools**) or pass `--agents` / `--agent-project <path>` to `dotfiles/install.sh` (persisted in `~/.config/dotfiles/install.conf`). `dotfiles/install.sh` will clone/pull `my-agent-config` and invoke `./install.sh` automatically.
 
 Restart Antigravity (or open a new session) afterwards. Running sessions may not pick up changes.
 
