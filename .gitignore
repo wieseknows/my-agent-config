@@ -1,0 +1,17 @@
+# SSH keys
+id_*
+*.pem
+*.key
+*.ppk
+
+# Backups and temporary files
+*.bak
+*.bak.*
+*.tmp
+tmp/
+temp/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
